@@ -26,6 +26,11 @@
                 <i class="fa fa-cart-arrow-down"></i> <span>Transaction</span>
               </a>
             </li>
+		 <li id="brandNav">
+              <a href="<?php echo base_url('Controller_All_Order/') ?>">
+                <i class="fa fa-cart-arrow-down"></i> <span>Order Manage</span>
+              </a>
+         </li>
             <li id="brandNav">
               <a href="<?php echo base_url('Controller_Change_Pass/') ?>">
                 <i class="fa fa-cart-arrow-down"></i> <span>Change password</span>

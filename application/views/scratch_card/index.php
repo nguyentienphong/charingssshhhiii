@@ -38,79 +38,58 @@
           </div>
         <?php endif; ?>
 
-        <form name="inputform" action="" method="post" >
-        <div class="box">
-        <div class="box-body">
-        <div class="form_row">
-                <div class="form_row_left">
-                    Loại thẻ:
-                </div><!--end .form_row_left-->
-                <div class="form_row_right">
-                    <select name="telcoCode" class="input_text">
-                        <option value="0">Chọn loại thẻ</option>
-                        <option value="ViettelNN">Thẻ Vietel</option>
-                        <option value="VinaNN">Thẻ Vinaphone</option>
-                    </select>
-                </div><!--end .form_row_right-->
-                <div class="clear"></div>
-            </div><!--end .form_row-->
-
-            <div class="form_row">
-                <div class="form_row_left">
-                    Serial:
-                </div><!--end .form_row_left-->
-                <div class="form_row_right">
-                    <input type="text" class="input_text" name="cardSerial" placeholder = "Nhập mã serial nằm sau thẻ" value="" />
-                </div><!--end .form_row_right-->
-                <div class="clear"></div>
-            </div><!--end .form_row-->
-            <div class="form_row">
-                <div class="form_row_left">
-                    Mã thẻ:
-                </div><!--end .form_row_left-->
-                <div class="form_row_right">
-                    <input type="text" class="input_text" name="cardPin" placeholder="Nhập mã số sau lớp bạc mỏng" value="" />
-                </div><!--end .form_row_right-->
-                <div class="clear"></div>
-            </div><!--end .form_row-->
-            <div class="form_row">
-                <div class="form_row_left">
-                    Mệnh giá thẻ:
-                </div><!--end .form_row_left-->
-                <div class="form_row_right">
-                    <select name="cardAmount" class="input_text">
-                        <option value="10000">10,000</option>
-                        <option value="20000">20,000</option>
-                        <option value="50000">50,000</option>
-                        <option value="100000">100,000</option>
-                        <option value="200000">200,000</option>
-                        <option value="500000">500,000</option>
-                        <option value="1000000">1,000,000</option>
-                    </select>
-                </div><!--end .form_row_right-->
-                <div class="clear"></div>
-            </div><!--end .form_row-->
-            <div class="form_row">
-                <div class="form_row_left">
-                    Mobile number:
-                </div><!--end .form_row_left-->
-                <div class="form_row_right">
-                    <input type="text" class="input_text" name="phoneNumber" placeholder="Nhập số điện thoại cần nạp" value="" />
-                </div><!--end .form_row_right-->
-                <div class="clear"></div>
-            </div><!--end .form_row-->
-
-            <div class="form_row">
-                <div class="form_row_left">&nbsp;</div><!--end .form_row_left-->
-                <div class="form_row_right">
-                    <input type="submit" name="frm_submit" value="Thanh toán" style="padding: 0px 10px; height: 25px; line-height: 25px;" />
-                </div><!--end .form_row_right-->
-                <div class="clear"></div>
-            </div><!--end .form_row-->
+        <form class="form-horizontal" action="" method="post" >
+        
+			<div class="box box-info">
+				<div class="box-header with-border">
+					<div class="form-group">
+						<label class="col-sm-1 control-label">Loại thẻ</label>
+						<div class="col-sm-3">
+							<select name="telcoCode" class="form-control">
+								<option value="0">Chọn loại thẻ</option>
+								<option value="ViettelNN">Thẻ Vietel</option>
+								<option value="VinaNN">Thẻ Vinaphone</option>
+							</select>
+						</div>
+						
+						<label class="col-sm-1 control-label">Serial</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" name="cardSerial" placeholder = "Nhập mã serial nằm sau thẻ" value="" />
+						</div>
+						
+						<label class="col-sm-1 control-label">Mã thẻ</label>
+						<div class="col-sm-3">
+							 <input type="text" class="form-control" name="cardPin" placeholder="Nhập mã số sau lớp bạc mỏng" value="" />
+						</div>
+					</div>
+					
+					<div class="form-group">
+						<label class="col-sm-1 control-label">Mệnh giá thẻ</label>
+						<div class="col-sm-3">
+							 <select name="cardAmount" class="form-control">
+								<option value="10000">10,000</option>
+								<option value="20000">20,000</option>
+								<option value="50000">50,000</option>
+								<option value="100000">100,000</option>
+								<option value="200000">200,000</option>
+								<option value="500000">500,000</option>
+								<option value="1000000">1,000,000</option>
+							</select>
+						</div>
+						
+						<label class="col-sm-1 control-label">Mobile number</label>
+						<div class="col-sm-3">
+							<input type="text" class="form-control" name="phoneNumber" placeholder="Nhập số điện thoại cần nạp" value="" />
+						</div>
+					</div>
+					
+					<input class="btn btn-primary" type="submit" name="frm_submit" value="Thanh toán">
+				</div>
+			</div>
         </form>
         
-        </div>
-        </div>
+        
+        
         <!-- /.box -->
       </div>
       <!-- col-md-12 -->
@@ -176,7 +155,7 @@ body {font-family: Arial, Helvetica, sans-serif;}
 }
 </style>
 
-<script type="text/javascript" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<!--script type="text/javascript" src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.flash.min.js"></script>
 
@@ -184,4 +163,4 @@ body {font-family: Arial, Helvetica, sans-serif;}
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/pdfmake.min.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.32/vfs_fonts.js"></script>
 <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.html5.min.js"></script>
-<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script>
+<script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.1/js/buttons.print.min.js"></script-->

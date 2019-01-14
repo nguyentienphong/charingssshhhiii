@@ -289,5 +289,40 @@ class model_transactions extends CI_Model
 			return ($delete == true) ? true : false;
 		}
 	}
+	
+	public function get_list_total_transaction($partner_id, $fromDate, $toDate, $search){
+		$fromdate = $fromDate.' 00:00:00';
+		$todate = $toDate.' 23:59:59';
+		$this->db->select('COUNT(row_id) as count_trans, SUM(response_amount) as sum_amount, provider_code');
+		if(!empty($fromDate))
+			$this->db->where("receive_date >=", $fromdate);
+		if(!empty($toDate))
+			$this->db->where("receive_date <=", $todate);
+		
+		if(!empty($search))
+			$this->db->where($search);
+		
+		$this->db->where("partner_id",$partner_id);
+		$this->db->where("final_status", '00');
+		$this->db->group_by('provider_code');
+		$query = $this->db->get('tbl_transactions');
+		
+		if($query->num_rows() > 0){
+            return $query->result();
+        }else{
+            return false;
+        }
+	}
+	
+	public function get_list_providers(){
+		$this->db->where("provider_status", 'A');
+		$query = $this->db->get('tbl_providers');
+		
+		if($query->num_rows() > 0){
+            return $query->result();
+        }else{
+            return false;
+        }
+	}
 
 }

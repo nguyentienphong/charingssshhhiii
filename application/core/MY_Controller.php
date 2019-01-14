@@ -29,6 +29,9 @@ class Admin_Controller extends MY_Controller
 			$this->data['user_permission'] = unserialize($group_data['permission']);
 			$this->permission = unserialize($group_data['permission']);
 		}
+		$this->load->library('form_validation');
+		$this->load->helper('form');
+		$this->load->helper('security');
 	}
 
 	public function logged_in()
@@ -49,10 +52,10 @@ class Admin_Controller extends MY_Controller
 
 	public function render_template($page = null, $data = array())
 	{
-
+		$data['merchant_name'] = $this->session->userdata('partner_username');
 		$this->load->view('templates/header',$data);
 		$this->load->view('templates/header_menu',$data);
-		$this->load->view('templates/side_menubar',$data);
+		//$this->load->view('templates/side_menubar',$data);
 		$this->load->view($page, $data);
 		$this->load->view('templates/footer',$data);
 	}
@@ -81,6 +84,7 @@ class Admin_Controller extends MY_Controller
 
 	public function calculateTwoDate($fromDate, $toDate)
 	{
+		log_message('error', '$todate- $fromdate ===> ' . $toDate . ' - ' .$fromDate);
 		$date = str_replace('/', '-', $fromDate);
 		$fromDate = date('Y-m-d', strtotime($date));
 		$fromdate= strtotime($fromDate);
